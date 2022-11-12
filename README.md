@@ -1,3 +1,17 @@
+
+# What is this?
+
+I'm just trying out this Svelte thing.  
+
+My goal is to write a simple UI like this:   
+* [ ] dropdown box to select 1 of (say) 3 images
+* [ ] dropdown box to select 1 of (say) 3 animations
+* [ ] "run" button to show the selected image, appearing / behaving in the selected animation style 
+* [ ] ... and, of course, some basic unit tests to cover, at least, display of the selected image 
+
+----
+
+
 # Svelte + Vite
 
 This template should help get you started developing with Svelte in Vite.
