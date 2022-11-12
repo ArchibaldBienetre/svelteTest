@@ -7,6 +7,7 @@
     const image1Text = `Welsh Corgy`;
     const image2Text = `Beagle`;
     const image3Text = `Bernese Mountain Dog`;
+    const toolTipTextSuffix = ` - isn't it a cute one?`;
 
     import image1 from '../../assets/dogImage1.jpg'
     import image2 from '../../assets/dogImage2.jpg'
@@ -36,14 +37,14 @@
 	let selected;
 	let imageToDisplay = image1;
 	let imageToDisplayAltText = image1Text;
-	let imageToDisplayToolTip = image1Text;
+	let imageToDisplayToolTip = image1Text + toolTipTextSuffix;
 
 	function handleSubmit() {
 		console.debug(`Selected image with ID '${selected.id}'`);
 		let imageData = chosenImageIdToImageData[selected.id];
 		imageToDisplay = imageData.image;
 		imageToDisplayAltText = imageData.text;
-		imageToDisplayToolTip = imageData.text;
+		imageToDisplayToolTip = imageData.text + toolTipTextSuffix;
 		console.debug(`The selected option is ${imageToDisplay? "truthy" : "falsy"}`);
 	}
 </script>
