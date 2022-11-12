@@ -8,34 +8,32 @@
     import image2 from '../../assets/dogImage2.jpg'
     import image3 from '../../assets/dogImage3.jpg'
 
-    const chosenImageIdToImage = {
-        "image1": image1,
-        "image2": image2,
-        "image3": image3
-    };
-
 	const imageOptions = [
 		{ id: "image1", text: `Welsh Corgy` },
 		{ id: "image2", text: `Beagle` },
 		{ id: "image3", text: `Bernese Mountain Dog ` }
 	];
 
-	let selected;
+    const chosenImageIdToImage = {
+        "image1": image1,
+        "image2": image2,
+        "image3": image3
+    };
 
-	let chosenImageId = "image1";
+	let selected;
 	let imageToDisplay = image1;
 
 	function handleSubmit() {
-		console.info(`Selected image with ID '${selected.id}'`);
+		console.debug(`Selected image with ID '${selected.id}'`);
 		imageToDisplay = chosenImageIdToImage[selected.id];
-		console.info(`The selected option is ${imageToDisplay? "truthy" : "falsy"}`);
+		console.debug(`The selected option is ${imageToDisplay? "truthy" : "falsy"}`);
 	}
 </script>
 
 <h2>Choose a picture</h2>
 
 <form on:submit|preventDefault={handleSubmit}>
-	<select bind:value={selected} on:change="{() => chosenImageId = ''}">
+	<select bind:value={selected} >
 		{#each imageOptions as imageOption}
 			<option value={imageOption}>
 				{imageOption.text}
@@ -48,7 +46,7 @@
 	</button>
 </form>
 
-<!-- Alternatively, could try start with an empty selection and CSS attribute display: none; or something -->
+<!-- Alternatively, could try start with an empty selection and CSS attribute "display: none;" or something -->
 <img src="{imageToDisplay}" />
 
 <style>
@@ -58,6 +56,6 @@
 		max-width: 100%;
 	}
 	img {
-	    width: 90%;
+	    height: 500px;
 	}
 </style>
