@@ -38,8 +38,8 @@
 	let imageToDisplayToolTip = image1Text + toolTipTextSuffix;
 
 	function handleSubmit() {
-		console.debug(`Selected image with ID '${selected.id}'`);
-		let imageData = chosenImageIdToImageData[selected.id];
+		console.debug(`Selected image with ID '${selected}'`);
+		let imageData = chosenImageIdToImageData[selected];
 		imageToDisplay = imageData.image;
 		imageToDisplayAltText = imageData.text;
 		imageToDisplayToolTip = imageData.text + toolTipTextSuffix;
@@ -54,13 +54,13 @@
 <form on:submit|preventDefault={handleSubmit}>
 	<select id="imageSelect" bind:value={selected}>
 		{#each imageOptions as imageOption}
-			<option value={imageOption}>
+			<option value={imageOption.id}>
 				{imageOption.text}
 			</option>
 		{/each}
 	</select>
 
-	<button id="sumbitSelection" type="submit"> Submit </button>
+	<button id="sumbitSelection" type="submit">Submit</button>
 </form>
 
 <!-- Alternatively, could try start with an empty selection and CSS attribute "display: none;" or something -->
