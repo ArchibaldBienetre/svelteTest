@@ -4,28 +4,46 @@
 
     // for now, let's just hard-code the options and all
 
+    const image1Text = `Welsh Corgy`;
+    const image2Text = `Beagle`;
+    const image3Text = `Bernese Mountain Dog`;
+
     import image1 from '../../assets/dogImage1.jpg'
     import image2 from '../../assets/dogImage2.jpg'
     import image3 from '../../assets/dogImage3.jpg'
 
 	const imageOptions = [
-		{ id: "image1", text: `Welsh Corgy` },
-		{ id: "image2", text: `Beagle` },
-		{ id: "image3", text: `Bernese Mountain Dog ` }
+		{ id: "image1", text: image1Text },
+		{ id: "image2", text: image2Text },
+		{ id: "image3", text: image3Text }
 	];
 
-    const chosenImageIdToImage = {
-        "image1": image1,
-        "image2": image2,
-        "image3": image3
+    const chosenImageIdToImageData = {
+        "image1": {
+            image: image1,
+            text: image1Text
+        },
+        "image2": {
+            image: image2,
+            text: image2Text
+        },
+        "image3": {
+            image: image3,
+            text: image3Text
+        }
     };
 
 	let selected;
 	let imageToDisplay = image1;
+	let imageToDisplayAltText = image1Text;
+	let imageToDisplayToolTip = image1Text;
 
 	function handleSubmit() {
 		console.debug(`Selected image with ID '${selected.id}'`);
-		imageToDisplay = chosenImageIdToImage[selected.id];
+		let imageData = chosenImageIdToImageData[selected.id];
+		imageToDisplay = imageData.image;
+		imageToDisplayAltText = imageData.text;
+		imageToDisplayToolTip = imageData.text;
 		console.debug(`The selected option is ${imageToDisplay? "truthy" : "falsy"}`);
 	}
 </script>
@@ -33,7 +51,7 @@
 <h2>Choose a picture</h2>
 
 <form on:submit|preventDefault={handleSubmit}>
-	<select bind:value={selected} >
+	<select id="imageSelect" bind:value={selected} >
 		{#each imageOptions as imageOption}
 			<option value={imageOption}>
 				{imageOption.text}
@@ -41,13 +59,13 @@
 		{/each}
 	</select>
 
-	<button type=submit>
+	<button id="sumbitSelection" type=submit>
 		Submit
 	</button>
 </form>
 
 <!-- Alternatively, could try start with an empty selection and CSS attribute "display: none;" or something -->
-<img src="{imageToDisplay}" />
+<img id="imageDisplay" alt="{imageToDisplayAltText}" title="{imageToDisplayToolTip}" src="{imageToDisplay}" />
 
 <style>
 	input {
