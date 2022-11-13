@@ -18,23 +18,25 @@ describe('FileChooser.svelte', () => {
     expect(img.alt).toEqual("Welsh Corgy");
     expect(img.title).toEqual("Welsh Corgy - isn't it a cute one?");
 
-    const dropdown = screen.getByRole('combobox');
-    expect(dropdown.value).toEqual('image1');
+    const dropdowns = screen.getAllByRole('combobox');
+    const imageSelect = dropdowns[0];
+    expect(imageSelect.value).toEqual('image1');
   })
 
   it('updates on select', async () => {
     // arrange
     const { container } = render(FileChooser, {});
     const btn = screen.getByText('Submit');
-    const dropdown = screen.getByRole('combobox');
+    const dropdowns = screen.getAllByRole('combobox');
+    const imageSelect = dropdowns[0];
 
     // act
-    fireEvent.change(dropdown, { target: { value: 'image2' } });
+    fireEvent.change(imageSelect, { target: { value: 'image2' } });
     await fireEvent.click(btn);
 
     // assert
      await waitFor(() => {
-        expect(dropdown.value).toEqual('image2');
+        expect(imageSelect.value).toEqual('image2');
         const img = screen.getByRole('img');
         expect(img).toBeTruthy();
         expect(img.src).toBeTruthy();
