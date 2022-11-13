@@ -35,14 +35,14 @@
 		},
 	};
 
-	let selected;
+	let selectedImage;
 	let imageToDisplay = image1;
 	let imageToDisplayAltText = image1Text;
 	let imageToDisplayToolTip = image1Text + toolTipTextSuffix;
 
 	function handleSubmit() {
-		console.debug(`Selected image with ID '${selected}'`);
-		let imageData = chosenImageIdToImageData[selected];
+		console.debug(`Selected image with ID '${selectedImage}'`);
+		let imageData = chosenImageIdToImageData[selectedImage];
 		imageToDisplay = imageData.image;
 		imageToDisplayAltText = imageData.text;
 		imageToDisplayToolTip = imageData.text + toolTipTextSuffix;
@@ -55,7 +55,7 @@
 <h2>Choose a picture</h2>
 
 <form on:submit|preventDefault={handleSubmit}>
-	<select id="imageSelect" bind:value={selected}>
+	<select id="imageSelect" bind:value={selectedImage}>
 		{#each imageOptions as imageOption}
 			<option value={imageOption.id}>
 				{imageOption.text}
