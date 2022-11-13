@@ -15,6 +15,7 @@
     "@playwright/test": "^1.27.1",
     "@sveltejs/vite-plugin-svelte": "^1.1.0",
     "@testing-library/svelte": "^3.2.2",
+    "@vitest/coverage-c8": "^0.25.1",
     "@vitest/ui": "^0.25.1",
     "jsdom": "^20.0.2",
     "playwright": "^1.27.1",
