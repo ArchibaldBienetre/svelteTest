@@ -1,0 +1,19 @@
+version: 2.1
+
+jobs:
+  run-tests:
+    docker:
+      - image: cimg/node:19.0.1-browsers
+    steps:
+      - checkout
+      - run:
+          command: |
+            ./runTests.sh
+      - store_artifacts:
+          path: "coverage"
+
+workflows:
+
+  full_workflow:
+    jobs:
+      - run-tests
