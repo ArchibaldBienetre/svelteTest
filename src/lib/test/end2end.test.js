@@ -47,4 +47,42 @@ describe('App.svelte', async () => {
     const selectedImageOption = page.locator('#imageSelect');
     expect(await extractSelectedValue(selectedImageOption)).toBe('Welsh Corgy ');
   }, 60_000)
+
+  test('should update on image select', async () => {
+    // arrange
+    await page.goto('http://localhost:' + localPort);
+
+    // act
+     await page.locator('#imageSelect').selectOption('image2');
+     await page.locator('#sumbitSelection').click();
+
+    // assert
+    const selectedImageOption = page.locator('#imageSelect');
+    expect(await extractSelectedValue(selectedImageOption)).toBe('Beagle ');
+
+    // if you want to see what's going on, you can always take a screenshot (among other options)
+    // await page.screenshot({ path: 'screenshot.png', fullPage: true });
+    const imgLocator = page.locator('#imageDisplay');
+    await expect(imgLocator).toHaveAttribute('alt', 'Beagle');
+    await expect(imgLocator).toHaveAttribute('title', "Beagle - isn't it a cute one?");
+  }, 60_000);
+
+  test('should update on transition select', async () => {
+    // arrange
+    await page.goto('http://localhost:' + localPort);
+
+    // act
+     await page.locator('#imageSelect').selectOption('image2');
+     await page.locator('#transitionSelect').selectOption('fly');
+     await page.locator('#sumbitSelection').click();
+
+    // assert
+    const selectedImageOption = page.locator('#imageSelect');
+    expect(await extractSelectedValue(selectedImageOption)).toBe('Beagle ');
+
+    const imgLocator = page.locator('#imageDisplay');
+    await expect(imgLocator).toHaveAttribute('alt', 'Beagle');
+    await expect(imgLocator).toHaveAttribute('title', "Beagle - isn't it a cute one?");
+  }, 60_000);
+
 })
