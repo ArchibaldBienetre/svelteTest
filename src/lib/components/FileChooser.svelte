@@ -63,18 +63,22 @@
 <h2>Choose a image and between-image transition</h2>
 
 <form on:submit|preventDefault={handleSubmit}>
-	<select id="imageSelect" aria-label="select images" bind:value={selectedImage}>
+	<select
+		id="imageSelect"
+		aria-label="select images"
+		bind:value={selectedImage}
+	>
 		{#each imageOptions as imageOption}
-			<option value={imageOption.id}>
-				{imageOption.text}
-			</option>
+			<option value={imageOption.id}>{imageOption.text}</option>
 		{/each}
 	</select>
-	<select id="transitionSelect" aria-label="select transition between images" bind:value={selectedTransition}>
+	<select
+		id="transitionSelect"
+		aria-label="select transition between images"
+		bind:value={selectedTransition}
+	>
 		{#each transitionOptions as transitionOption}
-			<option value={transitionOption.id}>
-				{transitionOption.text}
-			</option>
+			<option value={transitionOption.id}>{transitionOption.text}</option>
 		{/each}
 	</select>
 
