@@ -1,9 +1,8 @@
 <!-- mostly copied + adjusted from example here: https://svelte.dev/tutorial/select-bindings -->
 <script>
+	import { fade, fly } from "svelte/transition";
 
-	import { fade } from "svelte/transition";
-
-    // ############## images ##############
+	// ############## images ##############
 
 	const image1Text = `Welsh Corgy`;
 	const image2Text = `Beagle`;
@@ -40,6 +39,15 @@
 	let imageToDisplayAltText = image1Text;
 	let imageToDisplayToolTip = image1Text + toolTipTextSuffix;
 
+	// ############## transitions ##############
+
+	const transitionOptions = [
+		{ id: "fade", text: "fade" },
+		{ id: "fly", text: "fly" },
+	];
+
+	let selectedTransition;
+
 	function handleSubmit() {
 		console.debug(`Selected image with ID '${selectedImage}'`);
 		let imageData = chosenImageIdToImageData[selectedImage];
@@ -52,13 +60,20 @@
 	}
 </script>
 
-<h2>Choose a picture</h2>
+<h2>Choose a image and between-image transition</h2>
 
 <form on:submit|preventDefault={handleSubmit}>
-	<select id="imageSelect" bind:value={selectedImage}>
+	<select id="imageSelect" aria-label="select images" bind:value={selectedImage}>
 		{#each imageOptions as imageOption}
 			<option value={imageOption.id}>
 				{imageOption.text}
+			</option>
+		{/each}
+	</select>
+	<select id="transitionSelect" aria-label="select transition between images" bind:value={selectedTransition}>
+		{#each transitionOptions as transitionOption}
+			<option value={transitionOption.id}>
+				{transitionOption.text}
 			</option>
 		{/each}
 	</select>
@@ -66,16 +81,25 @@
 	<button id="sumbitSelection" type="submit">Submit</button>
 </form>
 
-
 {#key imageToDisplay}
-    <!-- Alternatively, could try start with an empty selection and CSS attribute "display: none;" or something -->
-	<img
-		in:fade
-		id="imageDisplay"
-		alt={imageToDisplayAltText}
-		title={imageToDisplayToolTip}
-		src={imageToDisplay}
-	/>
+	{#if selectedTransition === "fade"}
+		<img
+			in:fade
+			id="imageDisplay"
+			alt={imageToDisplayAltText}
+			title={imageToDisplayToolTip}
+			src={imageToDisplay}
+		/>
+	{/if}
+	{#if selectedTransition === "fly"}
+		<img
+			in:fly={{ y: 200, duration: 1000 }}
+			id="imageDisplay"
+			alt={imageToDisplayAltText}
+			title={imageToDisplayToolTip}
+			src={imageToDisplay}
+		/>
+	{/if}
 {/key}
 
 <style>
