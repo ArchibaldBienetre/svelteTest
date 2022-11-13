@@ -1,5 +1,6 @@
-import { cleanup, fireEvent, render, screen } from '@testing-library/svelte'
-import FileChooser from '../components/FileChooser.svelte'
+import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/svelte';
+import { tick } from 'svelte';
+import FileChooser from '../components/FileChooser.svelte';
 
 describe('FileChooser.svelte', () => {
   afterEach(() => cleanup());
@@ -32,11 +33,13 @@ describe('FileChooser.svelte', () => {
     await fireEvent.click(btn);
 
     // assert
-    expect(dropdown.value).toEqual('image2');
-    const img = screen.getByRole('img');
-    expect(img).toBeTruthy();
-    expect(img.src).toBeTruthy();
-    expect(img.alt).toEqual("Beagle");
-    expect(img.title).toEqual("Beagle - isn't it a cute one?");
+     await waitFor(() => {
+        expect(dropdown.value).toEqual('image2');
+        const img = screen.getByRole('img');
+        expect(img).toBeTruthy();
+        expect(img.src).toBeTruthy();
+        expect(img.alt).toEqual("Beagle");
+        expect(img.title).toEqual("Beagle - isn't it a cute one?");
+      }, {timeout: 2000});
   })
 })

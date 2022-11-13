@@ -1,6 +1,9 @@
 <!-- mostly copied + adjusted from example here: https://svelte.dev/tutorial/select-bindings -->
 <script>
-	// for now, let's just hard-code the options and all
+
+	import { fade } from "svelte/transition";
+
+    // ############## images ##############
 
 	const image1Text = `Welsh Corgy`;
 	const image2Text = `Beagle`;
@@ -63,13 +66,17 @@
 	<button id="sumbitSelection" type="submit">Submit</button>
 </form>
 
-<!-- Alternatively, could try start with an empty selection and CSS attribute "display: none;" or something -->
-<img
-	id="imageDisplay"
-	alt={imageToDisplayAltText}
-	title={imageToDisplayToolTip}
-	src={imageToDisplay}
-/>
+
+{#key imageToDisplay}
+    <!-- Alternatively, could try start with an empty selection and CSS attribute "display: none;" or something -->
+	<img
+		in:fade
+		id="imageDisplay"
+		alt={imageToDisplayAltText}
+		title={imageToDisplayToolTip}
+		src={imageToDisplay}
+	/>
+{/key}
 
 <style>
 	img {
