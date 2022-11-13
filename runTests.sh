@@ -10,4 +10,4 @@ IFS=$'\n\t'
 export CI=true
 
 # starts in run mode on CI: https://vitest.dev/guide/features.html#watch-mode
-npm run test
+npm run coverage
