@@ -45,7 +45,7 @@ describe('App.svelte', async () => {
     await expect(imgLocator).toHaveAttribute('title', "Welsh Corgy - isn't it a cute one?");
 
     const selectedImageOption = page.locator('#imageSelect');
-    expect(await extractSelectedValue(selectedImageOption)).toBe('Welsh Corgy ');
+    expect(await extractSelectedValue(selectedImageOption)).toBe('Welsh Corgy');
   }, 60_000)
 
   test('should update on image select', async () => {
@@ -58,7 +58,7 @@ describe('App.svelte', async () => {
 
     // assert
     const selectedImageOption = page.locator('#imageSelect');
-    expect(await extractSelectedValue(selectedImageOption)).toBe('Beagle ');
+    expect(await extractSelectedValue(selectedImageOption)).toBe('Beagle');
 
     // if you want to see what's going on, you can always take a screenshot (among other options)
     // await page.screenshot({ path: 'screenshot.png', fullPage: true });
@@ -78,7 +78,7 @@ describe('App.svelte', async () => {
 
     // assert
     const selectedImageOption = page.locator('#imageSelect');
-    expect(await extractSelectedValue(selectedImageOption)).toBe('Beagle ');
+    expect(await extractSelectedValue(selectedImageOption)).toBe('Beagle');
 
     const imgLocator = page.locator('#imageDisplay');
     await expect(imgLocator).toHaveAttribute('alt', 'Beagle');
