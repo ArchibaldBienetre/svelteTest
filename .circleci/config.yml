@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   run-tests:
     docker:
-      - image: cimg/node:19.0.1
+      - image: cimg/node:19.0.1-browsers
     steps:
       - checkout
       - run:
