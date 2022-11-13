@@ -1,15 +1,11 @@
 version: 2.1
 
-references:
-  workspace_root: &workspace_root "/home/circleci/workspace"
-
 jobs:
   run-tests:
     docker:
-      - image: cimg/base:stable
+      - image: cimg/node:19.0.1
     steps:
-      - checkout:
-          path: *workspace_root
+      - checkout
       - run:
           command: |
             ./runTests.sh
