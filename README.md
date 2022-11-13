@@ -4,9 +4,9 @@
 I'm just trying out this Svelte thing.  
 
 My goal is to write a simple UI like this:   
-* [X] dropdown box to select 1 of (say) 3 images
-* [ ] dropdown box to select 1 of (say) 3 animations
-* [ ] "run" button to show the selected image, appearing / behaving in the selected animation style 
+* [X] dropdown box to select 1 of ~~(say)~~ 3 images
+* [X] dropdown box to select 1 of ~~(say) 3~~ 2 animations
+* [X] ~~"run"~~ "submit" button to show the selected image, appearing / behaving in the selected animation style 
 * [X] ... and, of course, some basic unit tests to cover, at least, display of the selected image 
 
 ----
