@@ -72,11 +72,6 @@
 />
 
 <style>
-	input {
-		display: block;
-		width: 500px;
-		max-width: 100%;
-	}
 	img {
 		height: 500px;
 	}
