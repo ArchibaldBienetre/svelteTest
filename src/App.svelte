@@ -1,5 +1,6 @@
 <script>
   import FileChooser from "./lib/components/FileChooser.svelte";
+  import FlyingLogo from "./lib/components/FlyingLogo.svelte";
 </script>
 
 <main>
@@ -7,6 +8,9 @@
 
   <div class="card">
     <FileChooser />
+  </div>
+  <div class="card">
+    <FlyingLogo />
   </div>
 </main>
 
