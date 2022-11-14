@@ -7,10 +7,10 @@
   <h1>Svelte example app</h1>
 
   <div class="card">
-    <FileChooser />
+    <FlyingLogo />
   </div>
   <div class="card">
-    <FlyingLogo />
+    <FileChooser />
   </div>
 </main>
 
