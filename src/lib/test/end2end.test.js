@@ -13,7 +13,7 @@ import { expect } from '@playwright/test';
 const localPort = 3000;
 
 async function extractSelectedValue(selectedOption) {
-    return selectedOption.evaluate(sel => sel.options[sel.options.selectedIndex].textContent);
+  return selectedOption.evaluate(sel => sel.options[sel.options.selectedIndex].textContent);
 }
 
 describe('App.svelte', async () => {
@@ -53,8 +53,8 @@ describe('App.svelte', async () => {
     await page.goto('http://localhost:' + localPort);
 
     // act
-     await page.locator('#imageSelect').selectOption('image2');
-     await page.locator('#sumbitSelection').click();
+    await page.locator('#imageSelect').selectOption('image2');
+    await page.locator('#sumbitSelection').click();
 
     // assert
     const selectedImageOption = page.locator('#imageSelect');
@@ -72,9 +72,9 @@ describe('App.svelte', async () => {
     await page.goto('http://localhost:' + localPort);
 
     // act
-     await page.locator('#imageSelect').selectOption('image2');
-     await page.locator('#transitionSelect').selectOption('fly');
-     await page.locator('#sumbitSelection').click();
+    await page.locator('#imageSelect').selectOption('image2');
+    await page.locator('#transitionSelect').selectOption('fly');
+    await page.locator('#sumbitSelection').click();
 
     // assert
     const selectedImageOption = page.locator('#imageSelect');

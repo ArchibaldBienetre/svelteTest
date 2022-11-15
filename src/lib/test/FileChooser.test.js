@@ -1,5 +1,4 @@
 import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/svelte';
-import { tick } from 'svelte';
 import FileChooser from '../components/FileChooser.svelte';
 
 describe('FileChooser.svelte', () => {
