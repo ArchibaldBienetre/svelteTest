@@ -37,10 +37,11 @@
 
 <h2>Check out this reactive SVG</h2>
 
-<!-- Why we are not testing this: This component is really simple and has hardly any logic - don't test the framework! -->
+<!-- Why we are not testing all of this, like rotation and scaling?
+<!-- This component is really simple and has hardly any logic - don't test the framework! -->
 <!-- This is inline with recommendations https://svelte.dev/faq#how-do-i-test-svelte-apps -->
 
-<!-- This even works with transitions inside the SVG: https://svelte.dev/repl/svg-transitions?version=3.53.1 -->
+<!-- Transitions + SVG: This even works with transitions inside the SVG: https://svelte.dev/repl/svg-transitions?version=3.53.1 -->
 <!-- (but for some reason, only when I hide and re-show the SVG, not during the initial render) -->
 
 <button on:click={increaseScale}>Increase scale</button>
@@ -55,7 +56,7 @@
 
 <!-- Inline SVG is an HTML 5 feature: https://caniuse.com/svg-html5 -->
 {#if visible}
-    <div style={"transform:rotate(" + rotation + "deg);"}>
+    <div id="logo1" style={"transform:rotate(" + rotation + "deg);"}>
         <svg
             xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -79,7 +80,7 @@
             />
         </svg>
     </div>
-    <div style={"transform:rotate(" + rotation + "deg);"}>
+    <div id="logo2" style={"transform:rotate(" + rotation + "deg);"}>
         <svg
             xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink"
