@@ -11,7 +11,7 @@ describe('FlyingLogo.svelte', () => {
 
     // assert
     const logos = container.querySelectorAll("svg");
-    expect(logos).toHaveLength(2);
+    expect(logos).toHaveLength(3);
   })
 
   test.skip('hides if visibility is toggled', async () => {

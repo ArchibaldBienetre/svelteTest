@@ -1,5 +1,6 @@
 <script>
     import { fade, draw, fly, scale } from "svelte/transition";
+    import { zigzag } from "../transitions/custom-transitions";
 
     let path1 =
         "M239.682 40.707C211.113-.182 154.69-12.301 113.895 13.69L42.247 59.356a82.198 82.198 0 0 0-37.135 55.056a86.566 86.566 0 0 0 8.536 55.576a82.425 82.425 0 0 0-12.296 30.719a87.596 87.596 0 0 0 14.964 66.244c28.574 40.893 84.997 53.007 125.787 27.016l71.648-45.664a82.182 82.182 0 0 0 37.135-55.057a86.601 86.601 0 0 0-8.53-55.577a82.409 82.409 0 0 0 12.29-30.718a87.573 87.573 0 0 0-14.963-66.244";
@@ -98,6 +99,30 @@
                 d={path1}
             />
             <path transition:scale={{ duration: 1000 }} fill="#FFF" d={path2} />
+        </svg>
+    </div>
+    <div id="logo3" style={"transform:rotate(" + rotation + "deg);"}>
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            aria-hidden="true"
+            role="img"
+            class="iconify iconify--logos"
+            {width}
+            {height}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 256 308"
+        >
+            <path
+                transition:zigzag={{ duration: 1000 }}
+                fill="#FF3E00"
+                d={path1}
+            />
+            <path
+                transition:zigzag={{ duration: 1000 }}
+                fill="#FFF"
+                d={path2}
+            />
         </svg>
     </div>
 {/if}
