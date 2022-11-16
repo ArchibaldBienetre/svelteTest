@@ -6,9 +6,9 @@ const SCALE_OF_ZIG_ZAG_MOTION = 100;
 /**
  * @param numberOfWaypoints = number of points where the zigzagging changes direction
  **/
-export function getZigZagXPosition(eased, numberOfWaypoints) {
+export function getZigZagXPosition(easedPosition, numberOfWaypoints) {
 
-	const scaledProgress = eased * numberOfWaypoints;
+	const scaledProgress = easedPosition * numberOfWaypoints;
 
 	const roundedScaledProgress = Math.floor(scaledProgress);
 	const legGoesUp = roundedScaledProgress % 2 === 0;
