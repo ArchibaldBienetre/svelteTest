@@ -29,7 +29,7 @@ describe('FlyingLogo.svelte', () => {
     await waitFor(() => {
       const logos = container.querySelectorAll("svg");
       expect(logos).toHaveLength(0);
-    }, { timeout: 10000 });
-  })
+    }, { timeout: 10_000 });
+  }, 60_000)
 
 })
