@@ -4,7 +4,7 @@
 
 	// ############## images ##############
 
-	const image1Text = `Welsh Corgy`;
+	const image1Text = `Welsh Corgi`;
 	const image2Text = `Beagle`;
 	const image3Text = `Bernese Mountain Dog`;
 	const toolTipTextSuffix = ` - isn't it a cute one?`;

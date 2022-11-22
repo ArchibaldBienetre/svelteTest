@@ -14,8 +14,8 @@ describe('FileChooser.svelte', () => {
     const img = screen.getByRole('img');
     expect(img).toBeTruthy();
     expect(img.src).toBeTruthy();
-    expect(img.alt).toEqual("Welsh Corgy");
-    expect(img.title).toEqual("Welsh Corgy - isn't it a cute one?");
+    expect(img.alt).toEqual("Welsh Corgi");
+    expect(img.title).toEqual("Welsh Corgi - isn't it a cute one?");
 
     const dropdowns = screen.getAllByRole('combobox');
     const imageSelect = dropdowns[0];

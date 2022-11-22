@@ -41,11 +41,11 @@ describe('App.svelte', async () => {
     // assert
     const imgLocator = page.locator('#imageDisplay');
     await expect(imgLocator).toBeDefined();
-    await expect(imgLocator).toHaveAttribute('alt', 'Welsh Corgy');
-    await expect(imgLocator).toHaveAttribute('title', "Welsh Corgy - isn't it a cute one?");
+    await expect(imgLocator).toHaveAttribute('alt', 'Welsh Corgi');
+    await expect(imgLocator).toHaveAttribute('title', "Welsh Corgi - isn't it a cute one?");
 
     const selectedImageOption = page.locator('#imageSelect');
-    expect(await extractSelectedValue(selectedImageOption)).toBe('Welsh Corgy');
+    expect(await extractSelectedValue(selectedImageOption)).toBe('Welsh Corgi');
   }, 60_000)
 
   test('should update on image select', async () => {
