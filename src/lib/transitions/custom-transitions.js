@@ -51,7 +51,7 @@ export function zigzag(node, { duration }) {
 		css: (t, u) => {
 			const eased = t;
 			const x = getZigZagXPosition(eased, NUMBER_OF_WAYPOINTS) * SCALE_OF_ZIG_ZAG_MOTION;
-			const y = 0;
+			const y = x;
 			return `transform: translateX(${x}px) translateY(${y}px);`
 		}
 	};
