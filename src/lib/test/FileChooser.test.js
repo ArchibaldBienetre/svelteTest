@@ -1,5 +1,6 @@
 import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/svelte';
 import FileChooser from '../components/FileChooser.svelte';
+import { describe, test, expect, it } from 'vitest';
 
 describe('FileChooser.svelte', () => {
   afterEach(() => cleanup());

@@ -1,6 +1,7 @@
 import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/svelte';
 import FlyingLogo from '../components/FlyingLogo.svelte';
 import { tick } from 'svelte';
+import { describe, test, expect, it, afterEach } from 'vitest';
 
 describe('FlyingLogo.svelte', () => {
   afterEach(() => cleanup());

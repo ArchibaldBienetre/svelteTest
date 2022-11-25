@@ -1,4 +1,5 @@
 import { getZigZagXPosition } from '../transitions/custom-transitions';
+import { describe, test, expect } from 'vitest';
 
 describe('custom transitions', () => {
     describe('getZigZagXPosition', () => {
