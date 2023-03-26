@@ -57,7 +57,7 @@
 
 <!-- Inline SVG is an HTML 5 feature: https://caniuse.com/svg-html5 -->
 {#if visible}
-    <div id="logo1" style={"transform:rotate(" + rotation + "deg);"}>
+    <div class="logo" id="logo1" style={"transform:rotate(" + rotation + "deg);"}>
         <svg
             xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -81,7 +81,7 @@
             />
         </svg>
     </div>
-    <div id="logo2" style={"transform:rotate(" + rotation + "deg);"}>
+    <div class="logo" id="logo2" style={"transform:rotate(" + rotation + "deg);"}>
         <svg
             xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -101,7 +101,7 @@
             <path transition:scale={{ duration: 1000 }} fill="#FFF" d={path2} />
         </svg>
     </div>
-    <div id="logo3" style={"transform:rotate(" + rotation + "deg);"}>
+    <div class="logo" id="logo3" style={"transform:rotate(" + rotation + "deg);"}>
         <svg
             xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -128,4 +128,8 @@
 {/if}
 
 <style>
+.logo {
+    z-index: -1;
+    position: relative;
+}
 </style>
