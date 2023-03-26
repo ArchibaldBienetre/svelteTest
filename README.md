@@ -46,8 +46,8 @@ nowadays due to CORS restrictions without some changes
 * `src/assets/dogImage1.jpg` (Welsh Corgi, [source](https://commons.wikimedia.org/wiki/File:Welchcorgipembroke.JPG)):
   Pmuths1956, CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons
 * `src/assets/dogImage2.jpg` (Beagle, [source](https://commons.wikimedia.org/wiki/File:Beagle_600.jpg)): Brodo / en:sannse, CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons
-* `src/assets/dogImage3.jpg` (Bernese Mountain Dog, [souce](https://commons.wikimedia.org/wiki/File:Wystawa_Rybnik_02.10.2011_berne%C5%84ski_pies_pasterski_3pl.jpg)): Pleple2000, CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons 
-
+* `src/assets/dogImage3.jpg` (Bernese Mountain Dog, [source](https://commons.wikimedia.org/wiki/File:Wystawa_Rybnik_02.10.2011_berne%C5%84ski_pies_pasterski_3pl.jpg)): Pleple2000, CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons 
+* `src/assets/lowerSaxony.svg` (Map of German federal state Lower Saxony [source](https://commons.wikimedia.org/wiki/File:Lower_Saxony,_administrative_divisions_-_de_-_colored.svg), modified for this project): TUBS, CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons
 
 ----
 
