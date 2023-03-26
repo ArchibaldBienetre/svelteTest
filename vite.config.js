@@ -10,4 +10,6 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
   },
+  // relative URLs in the static output HTML:
+  // base: './'
 });

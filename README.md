@@ -36,6 +36,10 @@ npm run build
 ```
 Find the generated files in the folder `dist` after the build.
 
+Unfortunately, you can't run this website from those files locally 
+nowadays due to CORS restrictions without some changes 
+(see [this MDN link](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors/CORSRequestNotHttp#loading_a_local_file))
+
 ----
 
 ###Image sources 
