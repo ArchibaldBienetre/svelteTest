@@ -11,6 +11,33 @@ My goal is to write a simple UI like this:
 
 ----
 
+# How do I run this?
+## What to install
+
+Install a NodeJS / NPM environment on your system as is recommended for your operating system.
+
+See [this link](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
+
+## What to run
+
+### Locally (during development) - run from source code
+
+To start the local development server, run this in your shell:
+```
+npm install
+npm run dev
+```
+
+### Production environment - build a static website
+To build static files that you can put on your website / inside an NGinX container, run this in your shell:
+```
+npm install
+npm run build
+```
+Find the generated files in the folder `dist` after the build.
+
+----
+
 ###Image sources 
 * `src/assets/dogImage1.jpg` (Welsh Corgi, [source](https://commons.wikimedia.org/wiki/File:Welchcorgipembroke.JPG)):
   Pmuths1956, CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons
